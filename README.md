@@ -1,7 +1,9 @@
 # Graduate_project
 OCV (Object Detection &amp; LT code &amp; Video Backhaul)
-## Backend
-### Object Detection
+
+## Backend(Flask)
+
+### Object Detection(Yolov5)
 
 **Content**
 
@@ -30,7 +32,7 @@ OCV (Object Detection &amp; LT code &amp; Video Backhaul)
       update:如果为True，则对所有模型进行strip_optimizer操作，去除pt文件中的优化器等信息，默认为False
     """
 ```
-### Founatain Code
+### Founatain Code(LT code)
 
 **Content**
 * `core.py` contains the Symbol class, constants and functions that are used in both encoding and decoding.
@@ -43,7 +45,7 @@ OCV (Object Detection &amp; LT code &amp; Video Backhaul)
 $ python3 lt_codes.py filename [-h] [-r REDUNDANCY] [--systematic] [--verbose] [--x86]
 ```
 
-### Video Backhaul
+### Video Backhaul(Socket UDP)
 
 **Content**
 * `server_udp.py` contains the server threads: send packet(single), receive ack.(**single transmission**)
@@ -62,14 +64,20 @@ $ python3 clients_udp.py
 
 ### Others
 
+**`app.py`** receive request[GET,POST], send reponse[Display infos]
+
+**Usage**
+```
+python3 app.py
+```
+
 **Cache**
 * `input` upload the *.mp4 file,ready for detect
 * `temp` save the part of the video after cut, ready for detect
 * `receive` save the recovered file
 
 
-## Frontend
-**Language**:Vue.js
+## Frontend(Vue.js)
 
 **Components**
 * `Header.vue` Header component, show the title and author
